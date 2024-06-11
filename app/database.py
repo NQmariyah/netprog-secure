@@ -38,6 +38,5 @@ def create_task(item):
 	connection = connect_db()
 	cursor = connection.cursor()
 	cursor.execute('INSERT INTO tasks (item) VALUES (?)', (item))
-	tasks = cursor.fetchall()
+	connection.commit()
 	connection.close()
-	return tasks
