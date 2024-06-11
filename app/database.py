@@ -9,7 +9,7 @@ def create_table():
 	connection = connect_db()
 	cursor = connection.cursor()
 	cursor.execute('''
-		CREATE TABLE IF NOT EXIST tasks (
+		CREATE TABLE IF NOT EXISTS tasks (
 			   id INTEGER PRIMARY KEY AUTOINCREMENT,
 			   item TEXT NOT NULL,
 			   completed BOOLEAN DEFAULT FALSE
