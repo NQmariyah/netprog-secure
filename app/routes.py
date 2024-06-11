@@ -1,11 +1,5 @@
 from flask import Flask, jsonify, request, abort
-from database import (
-      connect_db,
-      create_table,
-      get_all_tasks,
-      get_task_by_id,
-      create_task,
-	)
+from app import database
 
 app = Flask(__name__)
 
