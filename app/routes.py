@@ -10,7 +10,7 @@ def create_db_if_not_exist():
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
 	tasks = database.get_all_tasks()
-	return jsonify({'task': [task for task in tasks]})
+	return jsonify({'task': [{'id':task[0], 'item': task[1], 'completed':task[2]} for task in tasks]})
 
 @app.route('/tasks/<int:task_id>', methods=['GET'])
 def get_task(task_id):
